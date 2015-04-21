@@ -21,6 +21,7 @@ var app = app || {};
 			'dblclick label': 'edit',
 			'click .destroy': 'clear',
             'click .edit-btn': 'edit',
+            'click .priority-btn': 'prioritize',
 			'keypress .edit': 'updateOnEnter',
 			'keydown .edit': 'revertOnEscape',
 			'blur .edit': 'close'
@@ -76,6 +77,12 @@ var app = app || {};
 			this.$el.addClass('editing');
 			this.$input.focus();
 		},
+
+        // Switch this view into `"priority"` mode.
+        prioritize: function () {
+            this.$el.addClass('priority');
+            this.$input.focus();
+        },
 
 		// Close the `"editing"` mode, saving changes to the todo.
 		close: function () {
